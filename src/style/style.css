@@ -1,0 +1,33 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.aba-login {
+    background-color: 	#1C1C1C;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.login{
+    color: white;
+    text-align: center;
+}
+
+.name-user {
+    display: block;
+}
+
+.senha-user {
+    display: block;
+}
+
+.btn-enter{
+    align-items: center;
+}
