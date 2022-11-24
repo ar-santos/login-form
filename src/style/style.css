@@ -11,13 +11,12 @@ body {
 
 .aba-login {
     background-color:#1c1c1c90;
- 
     width: 400px;
     height: 450px;
     border-radius: 20px;
     align-items: center;
     position: relative;
-    margin-top: 8%;
+    transform: translate(0px,150px);
 }
 
 .login{
