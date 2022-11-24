@@ -5,29 +5,69 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: 'Nunito Sans', sans-serif;
+    background: linear-gradient(90deg,#37208e,#1C1C1C 140%);
 }
 
 .aba-login {
-    background-color: 	#1C1C1C;
+    background-color:#1c1c1c90;
+ 
     width: 400px;
-    height: 500px;
-    border-radius: 10px;
+    height: 450px;
+    border-radius: 20px;
     align-items: center;
+    position: relative;
+    margin-top: 8%;
 }
 
 .login{
     color: white;
     text-align: center;
+    transform: translate(0px,100px);
 }
 
-.name-user {
+.input-user {
     display: block;
+    background-color: transparent;
+    width: 300px;
+    height: 30px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-color: red;
+    transform: translate(50px,130px);
+    outline:none;
+    color: white;
+    padding-left: 35px;
+    margin-bottom: 20px;
 }
 
-.senha-user {
-    display: block;
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.person {
+    position: relative;
+    float: right;
+    color: rgba(0, 0, 255, 0.596);
+    transform: translate(-320px,82px);
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.693);
+}
+
+.material-symbols-outlined.md-36 {
+    font-size: 21px;
 }
 
 .btn-enter{
-    align-items: center;
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    border-color: red;
+    border-radius: 4px;
+    transform: translate(50px,150px);
 }
