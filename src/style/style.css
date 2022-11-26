@@ -6,12 +6,12 @@ body {
     justify-content: center;
     flex-direction: column;
     font-family: 'Nunito Sans', sans-serif;
-    background: linear-gradient(90deg,#37208e,#1C1C1C 140%);
+    background: linear-gradient(90deg, #757F9A, #D7DDE8 130%);
 }
 
 .aba-login {
-    background-color:#1c1c1c90;
-    width: 400px;
+    background-color:#1c1c1cf6;
+    width: 450px;
     height: 450px;
     border-radius: 20px;
     align-items: center;
@@ -19,21 +19,29 @@ body {
     transform: translate(0px,150px);
 }
 
+.linha{
+    width: 85px;
+    border: 1px solid #D7DDE8;
+    transform: translate(183px,100px);
+    border-radius: 1px;
+}
+
 .login{
     color: white;
     text-align: center;
     transform: translate(0px,100px);
+    margin-bottom: 5px;
 }
 
 .input-user {
     display: block;
     background-color: transparent;
-    width: 300px;
+    width: 340px;
     height: 30px;
     border-left: none;
     border-right: none;
     border-top: none;
-    border-bottom-color: red;
+    border-bottom-color: #D7DDE8;
     transform: translate(50px,130px);
     outline:none;
     color: white;
@@ -50,7 +58,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     position: relative;
     float: right;
     color: rgba(0, 0, 255, 0.596);
-    transform: translate(-320px,82px);
+    transform: translate(-370px,82px);
     cursor: pointer;
     color: rgba(255, 255, 255, 0.693);
 }
@@ -62,11 +70,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .btn-enter{
     display: block;
     position: absolute;
-    width: 300px;
+    width: 340px;
     height: 30px;
     background-color: transparent;
     color: white;
-    border-color: red;
+    border-color: #D7DDE8;
     border-radius: 4px;
     transform: translate(50px,150px);
 }
