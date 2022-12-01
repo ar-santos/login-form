@@ -6,7 +6,7 @@ body {
     justify-content: center;
     flex-direction: column;
     font-family: 'Nunito Sans', sans-serif;
-    background: linear-gradient(90deg, #757F9A, #D7DDE8 130%);
+    background-image: radial-gradient(circle at 50%, #c0d6ff 0, #9db9f2 50%, #799ddd 100%);
 }
 
 .aba-login {
@@ -17,6 +17,7 @@ body {
     align-items: center;
     position: relative;
     transform: translate(0px,150px);
+    display: none;
 }
 
 .linha{
@@ -77,4 +78,99 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     border-color: #D7DDE8;
     border-radius: 4px;
     transform: translate(50px,150px);
+}
+
+.overlay{
+    position: absolute;
+    height: 28%;
+    width: 100%;
+    background:#8080804c;    
+    border-radius: 10px 10px 10px 10px;
+}
+
+.card{
+    background-color:#1c1c1cf6;
+    box-shadow: 0px 1px 10px 1px #000;
+    width: 350px;
+    height: 450px;
+    border-radius: 10px;
+    align-items: center;
+    position: relative;
+    transform: translate(0px,150px);
+}
+
+.faixa{
+    width: 65px;
+    height: 6px;
+    background:radial-gradient(circle at 50%, #c0d6ff 0, #9db9f2 50%, #799ddd 100%);
+    transform: translate(142px,18px);
+    border-radius: 10px;
+}
+
+.vertical {
+    border-left: 55px solid #1c1c1cf6;
+    height: 200px;
+    position:absolute;
+    transform: translate(147px,-180px);
+    border-radius: 3px;
+    z-index: 100;
+}
+
+.image-inform img{
+    height: 30%;
+    width: 30%;
+    object-fit: cover;
+    position: relative;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    transform: translate(115px,50px);
+
+}
+
+.titulo {
+    color: white;
+    text-align: center;
+    transform: translate(0px, 70px);
+    font-size: 16px;
+}
+
+.inform-card {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transform: translate(0px, 90px);
+   
+}
+
+.btn-address{
+    width: 30%;
+    height: 30px;
+    border-radius: 4px;
+    position: fixed;
+    margin-left: -161px;
+    border: none;
+    background-color: #8080804c;
+    color: white;
+}
+
+.btn-sobre{
+    width: 30%;
+    height: 30px;
+    border-radius: 4px;
+    position: fixed;
+    margin-left: -52px;
+    border: none;
+    background-color: #8080804c;
+    color: white;
+}
+
+.btn-company {
+    width: 30%;
+    height: 30px;
+    border-radius: 4px;
+    position: fixed;
+    margin-left: 57px;
+    border: none;
+    background-color: #8080804c;
+    color: white;
 }
