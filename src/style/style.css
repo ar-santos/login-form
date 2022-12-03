@@ -120,6 +120,11 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     z-index: 100;
 }
 
+.close {
+    color: rgba(255, 0, 198, 1);
+    transform: translate(314px,3px);
+}
+
 .image-inform img{
     height: 30%;
     width: 30%;
@@ -127,14 +132,14 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     position: relative;
     border-radius: 50%;
     border: 3px solid #fff;
-    transform: translate(115px,50px);
+    transform: translate(115px,25px);
 
 }
 
 .titulo {
     color: white;
     text-align: center;
-    transform: translate(0px, 70px);
+    transform: translate(0px, 45px);
     font-size: 16px;
 }
 
@@ -142,7 +147,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
    display: flex;
    justify-content: center;
    align-items: center;
-   transform: translate(0px, 90px);
+   transform: translate(0px, 67px);
    
 }
 
