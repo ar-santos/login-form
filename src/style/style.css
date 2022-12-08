@@ -187,7 +187,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     border: none;
     top: 229px;
     left: 177px;
-    background-color: #262626;
+    background: linear-gradient(136deg, rgba(255, 0, 198, 1) 0%, rgba(255, 255, 0, 1) 100%);
     color: white;
     cursor: pointer;
 }
@@ -234,4 +234,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     display: none;
     transform: translate(7px, 140px);
     color: rgba(255, 255, 255, 0.766);  
+}
+
+.campo-obrigatorio{
+    color: red;
+    font-size: 9px;
+    text-align: left;
+    margin-top: 140px;
+    margin-left: 50px;
+    display: none
 }
