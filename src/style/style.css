@@ -244,3 +244,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     margin-left: 50px;
     display: none
 }
+
+@media screen and (max-width: 462px){
+
+    .aba-login {
+        background-color:transparent;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+}
