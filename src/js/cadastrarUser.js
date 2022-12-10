@@ -2,10 +2,9 @@ import utils from './exibirEscondeCard.js'
 let nome = document.getElementById('input-name')
 let usuario = document.getElementById('input-usuario')
 let senha = document.getElementById('input-senha')
-let confirmSenha = document.getElementById('input-confirmarSenha')
 
 function cadastrar() {
-    if(nome && usuario && senha && confirmSenha){
+    if(nome && usuario && senha){
         let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
 
         listaUser.push(
