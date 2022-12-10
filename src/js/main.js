@@ -5,7 +5,17 @@ let btnAddress = document.getElementById('btn-address')
 let btnSobre = document.getElementById('btn-sobre')
 let btnCompany = document.getElementById('btn-company')
 let inputUser = document.getElementById('input-user')
+let btnCadastrar = document.getElementById('btn-cadastrar')
 import getUserData from './pegarDados.js'
+import acessar from './cadastrarUser.js'
+
+function cadastrarUser() {
+    acessar.cadastrar()
+    utils.exibirCampoCadastro()
+    // acessar.entrar()
+}
+
+btnCadastrar.addEventListener('click', cadastrarUser, false)
 
 function card() {
     getUserData()

@@ -13,6 +13,65 @@ body {
         
 }
 
+.aba-cadastrar{
+    background-color:#1c1c1cf6;
+    width: 450px;
+    height: 500px;
+    border-radius: 20px;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* display: none; */
+}
+
+.input-cadastrar {
+    display: block;
+    background-color: transparent;
+    width: 340px;
+    height: 30px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-color: #D7DDE8;
+    transform: translate(50px,130px);
+    outline:none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn-cadastrar{
+    display: block;
+    position: absolute;
+    width: 340px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    border-color: #D7DDE8;
+    border-radius: 4px;
+    transform: translate(50px,150px);
+    cursor: pointer;
+}
+
+.linha-h1 {
+    width: 120px;
+    height: 1px;
+    background:linear-gradient(136deg, rgba(255, 0, 198, 1) 0%, rgba(255, 255, 0, 1) 100%);     
+    transform: translate(165px,100px);
+    border-radius: 1px;
+}
+
+.campo-cadastro{
+    color: green;
+    width: 60%;
+    border-radius: 10px;
+    font-size:13px;
+    text-align: center;
+    transform: translate(35%,30px);
+    display: none;
+}
+
 .aba-login {
     background-color:#1c1c1cf6;
     width: 450px;
@@ -23,7 +82,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: block;
+    display: none;
 }
 
 .linha{
@@ -256,6 +315,14 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         transform: translate(-50%, -50%);
         animation-name: none;
 
+    }
+
+    .aba-cadastrar{
+        background-color:transparent;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 

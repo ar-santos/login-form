@@ -7,6 +7,8 @@ let btnAddress = document.getElementById('btn-address')
 let btnSobre = document.getElementById('btn-sobre')
 let btnCompany = document.getElementById('btn-company')
 let campoObrigatorio = document.getElementById('campo-obrigatorio')
+let abaCadastrar = document.getElementById('aba-cadastrar')
+let campoCadastro = document.getElementById('campo-cadastro')
 
 function exibirCard() {
     if (login.style.display == 'block') {
@@ -96,6 +98,29 @@ function OcultarCampo() {
     } 
  }
 
+ 
+function exibirFormLogin() {
+    if (login.style.display == 'block') {
+        login.style.display = 'block';
+        campoCadastro.style.display = 'block'
+        abaCadastrar.style.display = 'none';
+
+    } else { 
+        login.style.display = 'block';
+        campoCadastro.style.display = 'block'
+        abaCadastrar.style.display = 'none';  
+    } 
+}
+
+function exibirCampoCadastro() {
+    if (campoCadastro.style.display == 'block') {
+        campoCadastro.style.display = 'block'
+
+    } else { 
+        campoCadastro.style.display = 'block'
+    } 
+}
+
 const utils =  {
     exibirCard,
     fecharCard,
@@ -104,6 +129,8 @@ const utils =  {
     exibirInformCompany,
     campo,
     OcultarCampo,
+    exibirFormLogin,
+    exibirCampoCadastro,
  }
  
  export default utils 
