@@ -10,6 +10,15 @@ let campoObrigatorio = document.getElementById('campo-obrigatorio')
 let abaCadastrar = document.getElementById('aba-cadastrar')
 let campoCadastro = document.getElementById('campo-cadastro')
 
+let nome = document.getElementById('input-name')
+let labelNome = document.getElementById('name-label')
+
+let usuario = document.getElementById('input-usuario')
+let labelUser = document.getElementById('user-label')
+
+let senha = document.getElementById('input-password')
+let labelSenha = document.getElementById('senha-label')
+
 function exibirCard() {
     if (login.style.display == 'block') {
         login.style.display = 'none';
@@ -121,6 +130,42 @@ function exibirCampoCadastro() {
     } 
 }
 
+function labelName() {
+    if (nome.value.length <= 2) {
+        labelNome.style.color = 'red';
+        labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
+        nome.style.borderBottomColor = 'red';
+    } else { 
+        labelNome.style.color = 'green';
+        labelNome.innerHTML = 'Nome'
+        nome.style.borderBottomColor = 'green';
+    } 
+}
+
+function labelUsuario() {
+    if (usuario.value.length <= 4) {
+        labelUser.style.color = 'red';
+        labelUser.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
+        usuario.style.borderBottomColor = 'red';
+    } else { 
+        labelUser.style.color = 'green';
+        labelUser.innerHTML = 'Usuário'
+        usuario.style.borderBottomColor = 'green';
+    } 
+}
+
+function confirmSenha() {
+    if (senha.value.length <= 7) {
+        labelSenha.style.color = 'red';
+        labelSenha.innerHTML = 'Senha *Insira no minimo 8 caracteres'
+        senha.style.borderBottomColor = 'red';
+    } else { 
+        labelSenha.style.color = 'green';
+        labelSenha.innerHTML = 'Senha'
+        senha.style.borderBottomColor = 'green';
+    } 
+}
+
 const utils =  {
     exibirCard,
     fecharCard,
@@ -131,6 +176,9 @@ const utils =  {
     OcultarCampo,
     exibirFormLogin,
     exibirCampoCadastro,
+    labelName,
+    labelUsuario,
+    confirmSenha,
  }
  
  export default utils 

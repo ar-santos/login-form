@@ -35,10 +35,37 @@ body {
     border-right: none;
     border-top: none;
     border-bottom-color: #D7DDE8;
-    transform: translate(50px,130px);
+    transform: translate(50px,105px);
     outline:none;
     color: white;
+    margin-bottom: 10px;
+}
+
+.input-cadastros {
+    position: relative;
+    padding-top: 13px;
+    margin-top: 5%;
     margin-bottom: 20px;
+}
+
+.input-cadastros input:focus{
+    border-bottom: 2px solid #000;
+}
+
+.input-cadastros label{
+    color: white;
+    pointer-events: none;
+    position: fixed;
+    transform: translate(50px,55px);
+    margin-top: 13px;
+    transition: all .3s ease-out;
+}
+
+.input-cadastros input:focus + label,
+.input-cadastros input:valid + label{
+    font-size: 13px;
+    margin-top: 0;
+    color: white;
 }
 
 .btn-cadastrar{
