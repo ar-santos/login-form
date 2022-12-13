@@ -71,6 +71,8 @@ body {
     background-color: transparent;
     color: white;
     border-color: #D7DDE8;
+    margin-top: 20px ;
+    margin-bottom: 20px ;
     border-radius: 4px;
     transform: translate(50px,90px);
     cursor: pointer;
@@ -403,14 +405,14 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     width: 430px;
     height: 1px;
     background:linear-gradient(136deg, rgba(255, 0, 198, 1) 0%, rgba(255, 255, 0, 1) 100%);     
-    transform: translate(10px,140px);
+    transform: translate(10px,170px);
     border-radius: 1px;
 }
 
 .h1-entra{
     color: white;
     text-align: center;
-    transform: translate(0px,160px);
+    transform: translate(0px,190px);
     font-size: 20px;
     margin-bottom: 5px;
 }
@@ -424,7 +426,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     color: white;
     border-radius: 4px;
     border: none;
-    transform: translate(160px,170px);
+    transform: translate(160px,200px);
     cursor: pointer;
 }
 
