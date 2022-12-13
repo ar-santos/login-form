@@ -16,7 +16,7 @@
                 <h1>Cadastro sendo realizado...</h1>
             </div>
 
-            <h1 class="login">Cadastrar</h1>
+            <h1 class="login-cadastro">Cadastrar</h1>
             <div class="linha-h1"></div>
 
             <div class="input-cadastros">
@@ -32,9 +32,16 @@
             <div class="input-cadastros">
                 <input type="password" class="input-cadastrar" id="input-password" placeholder=""  autocomplete="off" required>
                 <label for="senha" class="senha-label" id="senha-label">Senha</label>
+                <span class="material-symbols-outlined md-36 visualizar-senha" id="visualizar-senha">visibility</span>
             </div>
 
             <button class="btn-cadastrar" id="btn-cadastrar">Cadastrar</button>
+
+            <div class="entrar-conta">
+                <div class="linhaSeparar"></div>
+                <h1 class="h1-entra">Já tem uma conta?</h1>
+                <button class="btn-entrar" id="btn-entrar">Entrar</button>
+            </div>
 
         </section>
 
@@ -42,19 +49,33 @@
 
             <h1 class="login">Login</h1>
             <div class="linha"></div>
+            
+            <div class="input-login">
+                <input type="search" class="input-user" id="input-user" placeholder=""  autocomplete="off" required>
+                <label for="usuario" class="user-input" id="user-input">Usuário</label>
+            </div>
+            
+            <div class="input-login">
+                <input type="password" class="input-user"  id="input-senha" placeholder="" autocomplete="off" required>
+                <label for="senha" class="senha-input" id="senha-input">Senha</label>
+                <span class="material-symbols-outlined md-36 visualizarSenhaLogin" id="visualizarSenha">visibility</span>
+            </div>
 
-            <input type="search" class="input-user" id="input-user" placeholder="Usuário"  autocomplete="off">
-            <span class="material-symbols-outlined person md-36">person</span>
+            <div class="spans">
+                <span class="material-symbols-outlined person md-36" id="person">person</span>
+                <span class="material-symbols-outlined lock md-36" id="lock">lock</span>
+            </div>
 
-
-            <input type="password" class="input-user"  id="input-senha" placeholder="Senha">
-            <span class="material-symbols-outlined person md-36">lock</span>
-
-        
             <button class="btn-enter" id="btn-enter">Entrar</button>
 
             <div class="campo-obrigatorio" id="campo-obrigatorio">
                 <h1>Usuario ou senha incorretos.</h1>
+            </div>
+
+            <div class="now-conta">
+                <div class="linhaSeparadora"></div>
+                <h1 class="h1-conta">Não tem uma conta?</h1>
+                <button class="btn-criar" id="btn-criar">Criar nova conta</button>
             </div>
 
         </section>

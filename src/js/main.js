@@ -9,6 +9,13 @@ let btnCadastrar = document.getElementById('btn-cadastrar')
 let nome = document.getElementById('input-name')
 let usuario = document.getElementById('input-usuario')
 let senha = document.getElementById('input-password')
+let nomeLogin = document.getElementById('input-user')
+let senhaLogin = document.getElementById('input-senha')
+let visualizarSenha = document.getElementById('visualizar-senha')
+let exibirSenhaLogin = document.getElementById('visualizarSenha')
+let btnExibirCadastro = document.getElementById('btn-criar')
+let btnExibirLogin = document.getElementById('btn-entrar')
+
 
 import getUserData from './pegarDados.js'
 import acessar from './cadastrarUser.js'
@@ -24,6 +31,8 @@ btnCadastrar.addEventListener('click', cadastrarUser, false)
 function card() {
     getUserData()
     inputUser.value = ''
+    senhaLogin.value = ''
+    utils.trocarCoresLogin()
 }
 
 btnEnter.addEventListener('click', card, false)
@@ -67,6 +76,48 @@ function confirmaSenha() {
 }
 
 senha.addEventListener('keyup', confirmaSenha, false)
+
+function confirmaLoginName() {
+    utils.LoginEnterName()
+}
+
+nomeLogin.addEventListener('keyup', confirmaLoginName, false)
+
+function confirmaLoginSenha() {
+    utils.confirmSenhalogin()
+}
+
+senhaLogin.addEventListener('keyup', confirmaLoginSenha, false)
+
+function mostrarSenha() {
+    utils.visualizarSenhaCadastro()
+}
+
+visualizarSenha.addEventListener('click', mostrarSenha, false)
+
+function mostrarSenhaLogin() {
+    utils.visualizarSenhaLogin()
+}
+
+exibirSenhaLogin.addEventListener('click', mostrarSenhaLogin, false)
+
+function exibirPaginaCadastro() {
+    utils.exibirCadastro()
+}
+
+btnExibirCadastro.addEventListener('click', exibirPaginaCadastro, false)
+
+function limparInput() {
+    nome.value = ''
+    usuario.value = ''
+    senha.value = ''
+}
+btnCadastrar.addEventListener('click', limparInput, false)
+
+function campoLogin() {
+   utils.exibirCampoLogin()
+}
+btnExibirLogin.addEventListener('click', campoLogin, false)
 
 close.addEventListener('click', closeCard, false)
 btnSobre.addEventListener('click', informSobre, false)
