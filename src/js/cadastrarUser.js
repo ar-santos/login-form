@@ -17,10 +17,6 @@ function cadastrar() {
 
         localStorage.setItem('listaUser', JSON.stringify(listaUser))
 
-        setTimeout(()=> {
-            utils.exibirFormLogin()
-        },3000)
-
     }else{
         // utils.campo()
     }

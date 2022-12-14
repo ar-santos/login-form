@@ -22,7 +22,7 @@ import acessar from './cadastrarUser.js'
 
 function cadastrarUser() {
     acessar.cadastrar()
-    utils.exibirCampoCadastro()
+    utils.valida_form()
     // acessar.entrar()
 }
 
@@ -103,19 +103,18 @@ exibirSenhaLogin.addEventListener('click', mostrarSenhaLogin, false)
 
 function exibirPaginaCadastro() {
     utils.exibirCadastro()
+    inputUser.value = ''
+    senhaLogin.value = ''
+    utils.trocarCoresLogin()
 }
 
 btnExibirCadastro.addEventListener('click', exibirPaginaCadastro, false)
 
-function limparInput() {
-    nome.value = ''
-    usuario.value = ''
-    senha.value = ''
-}
-btnCadastrar.addEventListener('click', limparInput, false)
-
 function campoLogin() {
    utils.exibirCampoLogin()
+   nome.value = ''
+   usuario.value = ''
+   senha.value = ''
 }
 btnExibirLogin.addEventListener('click', campoLogin, false)
 

@@ -9,7 +9,7 @@ let btnCompany = document.getElementById('btn-company')
 let campoObrigatorio = document.getElementById('campo-obrigatorio')
 let abaCadastrar = document.getElementById('aba-cadastrar')
 let campoCadastro = document.getElementById('campo-cadastro')
-// let inputCadastros = document.getElementById('input-cadastros')
+let validacaoCampos = document.getElementById('validacao-campos')
 
 let nome = document.getElementById('input-name')
 let labelNome = document.getElementById('name-label')
@@ -147,25 +147,7 @@ function OcultarCampo() {
     } 
  }
 
- 
-function exibirFormLogin() {
-    if (login.style.display == 'block') {
-        login.style.display = 'block';
-        campoCadastro.style.display = 'block'
-        abaCadastrar.style.display = 'none';
-        labelNome.innerHTML = 'Nome';
-        labelSenhaLogin.innerHTML = 'Senha';
-
-    } else { 
-        login.style.display = 'block';
-        campoCadastro.style.display = 'block'
-        abaCadastrar.style.display = 'none';  
-        labelNome.innerHTML = 'Nome';
-        labelSenhaLogin.innerHTML = 'Senha';
-    } 
-}
-
-function exibirCampoCadastro() {
+ function exibirCampoCadastro() {
     if (campoCadastro.style.display == 'block') {
         campoCadastro.style.display = 'block'
         nome.style.borderBottomColor = 'white';
@@ -190,6 +172,50 @@ function exibirCampoCadastro() {
         labelUser.innerHTML = 'Usuário'
         labelSenha.innerHTML = 'Senha'
     } 
+}
+
+ function exibirFormLogin() {
+    if (abaCadastrar.style.display == 'block') {
+        login.style.display = 'block';
+        abaCadastrar.style.display = 'none';
+        labelNome.innerHTML = 'Nome';
+        labelSenhaLogin.innerHTML = 'Senha';
+
+    } else { 
+        login.style.display = 'block';
+        abaCadastrar.style.display = 'none';  
+        labelNome.innerHTML = 'Nome';
+        labelSenhaLogin.innerHTML = 'Senha';
+
+    } 
+}
+
+function valida_form (){
+    if(nome.value.length < 3){
+    validacaoCampos.style.display = 'block';
+    nome.focus();
+    return false
+ }else if(usuario.value.length < 5){
+    validacaoCampos.style.display = 'block';
+    usuario.focus();
+    return false
+ }else if(senha.value.length < 8){
+    validacaoCampos.style.display = 'block';
+    senha.focus();
+    return false
+ }else{
+    validacaoCampos.style.display = 'none';
+
+     exibirCampoCadastro()
+
+     setTimeout(()=> {
+        exibirFormLogin()
+    },3000)
+
+    nome.value = ''
+    usuario.value = ''
+    senha.value = ''
+ }
 }
 
 function exibirCampoLogin() {
@@ -332,8 +358,7 @@ const utils =  {
     exibirInformCompany,
     campo,
     OcultarCampo,
-    exibirFormLogin,
-    exibirCampoCadastro,
+    valida_form,
     labelName,
     labelUsuario,
     confirmSenha,
