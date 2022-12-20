@@ -33,6 +33,7 @@ function card() {
     inputUser.value = ''
     senhaLogin.value = ''
     utils.trocarCoresLogin()
+    acessar.entrar()
 }
 
 btnEnter.addEventListener('click', card, false)

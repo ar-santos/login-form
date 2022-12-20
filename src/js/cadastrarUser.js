@@ -1,7 +1,12 @@
 import utils from './exibirEscondeCard.js'
 let nome = document.getElementById('input-name')
 let usuario = document.getElementById('input-usuario')
-let senha = document.getElementById('input-senha')
+let senha = document.getElementById('input-password')
+
+let inputUser = document.getElementById('input-user')
+let inputSenha = document.getElementById('input-senha')
+
+
 
 function cadastrar() {
     if(nome && usuario && senha){
@@ -32,9 +37,10 @@ function entrar() {
         senha: ''
     }
     listarUser = JSON.parse(localStorage.getItem('listaUser'))
+    console.log(listarUser)
 
     listarUser.forEach((item) => {
-        if(usuario.value == item.userCad && senha.value == item.senhaCad){
+        if(inputUser.value == item.userCad && inputSenha.value == item.senhaCad){
 
             userValid = {
                 nome: item.nomeCad,
