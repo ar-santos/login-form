@@ -9,7 +9,7 @@ let inputSenha = document.getElementById('input-senha')
 
 
 function cadastrar() {
-    if(nome && usuario && senha){
+    if(nome.value && usuario.value && senha.value !=""){
         let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
 
         listaUser.push(
@@ -23,24 +23,24 @@ function cadastrar() {
         localStorage.setItem('listaUser', JSON.stringify(listaUser))
 
     }else{
-        // utils.campo()
+        utils.campo()
     }
     
 }
 
 function entrar() {
-    let listarUser = []
+    let listaUser = []
 
     let userValid = {
         nome: '',
         user: '',
         senha: ''
     }
-    listarUser = JSON.parse(localStorage.getItem('listaUser'))
-    console.log(listarUser)
+    listaUser = JSON.parse(localStorage.getItem('listaUser'))
+    // console.log(listaUser)
 
-    listarUser.forEach((item) => {
-        if(inputUser.value == item.userCad && inputSenha.value == item.senhaCad){
+    listaUser.forEach((item) => {
+        if(inputUser.value == item.userCad.value && inputSenha.value == item.senhaCad.value){
 
             userValid = {
                 nome: item.nomeCad,
