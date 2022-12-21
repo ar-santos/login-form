@@ -1,5 +1,6 @@
 import utils from './exibirEscondeCard.js'
 let btnEnter = document.getElementById('btn-enter')
+let btnPesquisa = document.getElementById('btn-pesquisa')
 let close = document.getElementById('close')
 let btnAddress = document.getElementById('btn-address')
 let btnSobre = document.getElementById('btn-sobre')
@@ -10,6 +11,7 @@ let nome = document.getElementById('input-name')
 let usuario = document.getElementById('input-usuario')
 let senha = document.getElementById('input-password')
 let nomeLogin = document.getElementById('input-user')
+let inputPesquisa = document.getElementById('input-pesquisa')
 let senhaLogin = document.getElementById('input-senha')
 let visualizarSenha = document.getElementById('visualizar-senha')
 let exibirSenhaLogin = document.getElementById('visualizarSenha')
@@ -29,7 +31,6 @@ function cadastrarUser() {
 btnCadastrar.addEventListener('click', cadastrarUser, false)
 
 function card() {
-    getUserData()
     inputUser.value = ''
     senhaLogin.value = ''
     utils.trocarCoresLogin()
@@ -37,6 +38,14 @@ function card() {
 }
 
 btnEnter.addEventListener('click', card, false)
+
+function exibirPesquisar() {
+    getUserData()
+    inputPesquisa.value = ''
+}
+
+btnPesquisa.addEventListener('click', exibirPesquisar, false)
+
 
 inputUser.addEventListener('keyup', (e)=> {
     (e.key === 'Enter' ? card() : null)

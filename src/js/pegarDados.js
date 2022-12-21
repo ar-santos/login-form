@@ -10,8 +10,7 @@ import helpers from './helpers.js'
 const getUserData = async () => {
 
     try {
-        let resultadoDigitado = document.getElementById("input-user").value
-        let resultadoDigitadoSenha = document.getElementById("input-senha").value
+        let resultadoDigitado = document.getElementById("input-pesquisa").value
         let userData = await getUsers(`https://jsonplaceholder.typicode.com/users/${resultadoDigitado}`)
 
         let usuario = userData

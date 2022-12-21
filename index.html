@@ -72,16 +72,32 @@
 
             <button class="btn-enter" id="btn-enter">Entrar</button>
 
-            <div class="campo-obrigatorio" id="campo-obrigatorio">
-                <h1>Usuario ou senha incorretos.</h1>
-            </div>
-
             <div class="now-conta">
                 <div class="linhaSeparadora"></div>
                 <h1 class="h1-conta">Não tem uma conta?</h1>
                 <button class="btn-criar" id="btn-criar">Criar nova conta</button>
             </div>
 
+        </section>
+
+        <section class="localizar-user" id="localizar-user">
+
+            <h1 class="h1-user">Localizar Usuário</h1>
+
+            <div class="name-linha"></div>
+
+            <div class="input-search">
+                <input type="search" class="input-pesquisa" id="input-pesquisa" placeholder=""  autocomplete="off" required>
+                <label for="usuario" class="label-pesquisa" id="label-pesquisa">Por favor, digite o Id do usuário:</label>
+            </div>
+            
+            <span class="material-symbols-outlined md-36 button-pesquisa" id="pesquisaUsuarioIcon">search</span>
+            <button class="btn-pesquisa" id="btn-pesquisa">Pesquisar Usuário</button>
+
+            <div class="campo-obrigatorio" id="campo-obrigatorio">
+                <h1>Usuario ou senha incorretos.</h1>
+            </div>
+            
         </section>
 
         <section class="card" id="card">
@@ -125,6 +141,8 @@
             </section>
 
         </section>
+
+
 
         <script type="module" src="./src/js/main.js"></script>
     </body>

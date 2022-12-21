@@ -1,4 +1,5 @@
 let login = document.getElementById('aba-login')
+let localizarUser = document.getElementById('localizar-user')
 let card = document.getElementById('card')
 let informAddress = document.getElementById('inform-address')
 let informSobre = document.getElementById('inform-sobre')
@@ -30,18 +31,18 @@ let spanSenha = document.getElementById('lock')
 
 
 function exibirCard() {
-    if (login.style.display == 'block') {
-        login.style.display = 'none';
+    if (localizarUser.style.display == 'block') {
+        localizarUser.style.display = 'none';
         card.style.display = 'block';
     } else { 
-        login.style.display = 'none'  
+        localizarUser.style.display = 'none'  
         card.style.display = 'block';
     } 
 }
 
 function fecharCard() {
     if (card.style.display == 'block') {
-        login.style.display = 'block'
+        localizarUser.style.display = 'block'
         card.style.display = 'none'
         nomeLogin.style.borderBottomColor = 'white';
         labelNomeLogin.style.color = 'white';
