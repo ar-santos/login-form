@@ -40,7 +40,7 @@ function entrar() {
     // console.log(listaUser)
 
     listaUser.forEach((item) => {
-        if(inputUser.value == item.userCad.value && inputSenha.value == item.senhaCad.value){
+        if(inputUser.value == item.userCad && inputSenha.value == item.senhaCad){
 
             userValid = {
                 nome: item.nomeCad,
