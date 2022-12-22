@@ -34,7 +34,7 @@ function entrar() {
     let userValid = {
         nome: '',
         user: '',
-        senha: ''
+        senha: '',
     }
     listaUser = JSON.parse(localStorage.getItem('listaUser'))
     // console.log(listaUser)
@@ -47,6 +47,14 @@ function entrar() {
                 user: item.userCad,
                 senha: item.senhaCad
             }
+            // alert('errou')
+        }else{
+            // userValid = {
+            //     nome: item.nomeCad,
+            //     user: item.userCad,
+            //     senha: item.senhaCad
+            // }
+            // alert('esta correto')
         }
     })
 
