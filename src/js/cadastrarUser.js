@@ -9,12 +9,12 @@ let inputSenha = document.getElementById('input-senha')
 
 
 function cadastrar() {
-    if(nome.value && usuario.value && senha.value !=""){
+    if(usuario.value && senha.value !=""){
         let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
 
         listaUser.push(
             {
-                nomeCad: nome.value,
+                // nomeCad: nome.value,
                 userCad: usuario.value,
                 senhaCad: senha.value
             }
@@ -32,7 +32,7 @@ function entrar() {
     let listaUser = []
 
     let userValid = {
-        nome: '',
+        // nome: '',
         user: '',
         senha: '',
     }
@@ -43,18 +43,10 @@ function entrar() {
         if(inputUser.value == item.userCad && inputSenha.value == item.senhaCad){
 
             userValid = {
-                nome: item.nomeCad,
+                // nome: item.nomeCad,
                 user: item.userCad,
                 senha: item.senhaCad
             }
-            // alert('errou')
-        }else{
-            // userValid = {
-            //     nome: item.nomeCad,
-            //     user: item.userCad,
-            //     senha: item.senhaCad
-            // }
-            // alert('esta correto')
         }
     })
 
