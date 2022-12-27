@@ -1,22 +1,20 @@
 import utils from './exibirEscondeCard.js'
-let nome = document.getElementById('input-name')
-let usuario = document.getElementById('input-usuario')
-let senha = document.getElementById('input-password')
+let cadastro_nome = document.getElementById('cadastro-input-name')
+let cadastro_usuario = document.getElementById('cadastro-input-usuario')
+let cadastro_senha = document.getElementById('cadastro-input-password')
 
-let inputUser = document.getElementById('input-user')
-let inputSenha = document.getElementById('input-senha')
+let login_inputUser = document.getElementById('login-input-user')
+let login_inputSenha = document.getElementById('login-input-senha')
 
-
-
-function cadastrar() {
-    if(usuario.value && senha.value !=""){
+function cadastrarUsuario() {
+    if(cadastro_usuario.value && cadastro_senha.value !=""){
         let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
 
         listaUser.push(
             {
-                // nomeCad: nome.value,
-                userCad: usuario.value,
-                senhaCad: senha.value
+                nomeCad: cadastro_nome.value,
+                userCad: cadastro_usuario.value,
+                senhaCad: cadastro_senha.value
             }
         )
 
@@ -28,11 +26,11 @@ function cadastrar() {
     
 }
 
-function entrar() {
+function acessarUsuario() {
     let listaUser = []
 
     let userValid = {
-        // nome: '',
+        nome: '',
         user: '',
         senha: '',
     }
@@ -40,10 +38,10 @@ function entrar() {
     // console.log(listaUser)
 
     listaUser.forEach((item) => {
-        if(inputUser.value == item.userCad && inputSenha.value == item.senhaCad){
+        if(login_inputUser.value == item.userCad && login_inputSenha.value == item.senhaCad){
 
             userValid = {
-                // nome: item.nomeCad,
+                nome: item.nomeCad,
                 user: item.userCad,
                 senha: item.senhaCad
             }
@@ -53,9 +51,9 @@ function entrar() {
     console.log(userValid)
 }
 
-const acessar = {
-    cadastrar,
-    entrar,
+const funcoesUsuarios = {
+    cadastrarUsuario,
+    acessarUsuario,
 }
 
-export default acessar
+export default funcoesUsuarios

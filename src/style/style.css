@@ -13,7 +13,7 @@ body {
         
 }
 
-.aba-cadastrar{
+.card-cadastrar{
     background-color:#1c1c1cf6;
     width: 450px;
     height: 530px;
@@ -41,13 +41,13 @@ body {
     margin-bottom: 10px;
 }
 
-.input-cadastros {
+.cadastro-input{
     position: relative;
     padding-top: 0px;
     margin-top: 5%;
 }
 
-.input-cadastros label{
+.cadastro-input label{
     color: white;
     pointer-events: none;
     position: absolute;
@@ -56,8 +56,8 @@ body {
     transition: all .3s ease-out;
 }
 
-.input-cadastros input:focus + label,
-.input-cadastros input:valid + label{
+.cadastro-input input:focus + label,
+.cadastro-input input:valid + label{
     font-size: 13px;
     margin-top: 0;
     color: white;
@@ -77,14 +77,14 @@ body {
     transform: translate(50px,90px);
     cursor: pointer;
 }
-.login-cadastro{
+.h1-login-cadastro{
     color: white;
     text-align: center;
     transform: translate(0px,60px);
     margin-bottom: 5px;
 }
 
-.linha-h1 {
+.cadastro-linha {
     width: 165px;
     height: 1px;
     background:linear-gradient(136deg, rgba(255, 0, 198, 1) 0%, rgba(255, 255, 0, 1) 100%);     
@@ -92,7 +92,7 @@ body {
     border-radius: 1px;
 }
 
-.campo-cadastro{
+.h1-userCadastrando{
     color: green;
     border-radius: 10px;
     font-size:12px;
@@ -112,7 +112,7 @@ body {
     display: none;
 }
 
-.aba-login {
+.cadastro-login {
     background-color:#1c1c1cf6;
     width: 450px;
     height: 470px;
@@ -125,11 +125,11 @@ body {
     /* display: none; */
 }
 
-.linha{
+.login-linha{
     width: 85px;
     height: 1px;
     background:linear-gradient(136deg, rgba(255, 0, 198, 1) 0%, rgba(255, 255, 0, 1) 100%);     
-    transform: translate(183px,100px);
+    transform: translate(183px,62px);
     border-radius: 1px;
 }
 
@@ -140,7 +140,7 @@ body {
     margin-bottom: 5px;
 }
 
-.input-user {
+.login-input {
     display: block;
     background-color: transparent;
     width: 340px;
@@ -193,12 +193,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     color: rgba(255, 255, 255, 0.693);
 }
 
-.person {
+.login-span-person {
     transform: translate(20px,-50px);
     color: #fff;
 }
 
-.lock {
+.login-span-lock{
     transform: translate(-6px,3px);
 }
 .visualizarSenhaLogin{
@@ -212,7 +212,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     font-size: 21px;
 }
 
-.btn-enter{
+.btn-login-enter{
     display: block;
     position: absolute;
     width: 340px;
@@ -233,7 +233,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     border-radius: 10px 10px 10px 10px;
 }
 
-.linhaSeparadora{
+.login-linhaSeparadora{
     width: 430px;
     height: 1px;
     background:linear-gradient(136deg, rgba(255, 0, 198, 1) 0%, rgba(255, 255, 0, 1) 100%);     
@@ -241,7 +241,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     border-radius: 1px;
 }
 
-.h1-conta{
+.login-h1-cadastrar{
     color: white;
     text-align: center;
     transform: translate(20px,220px);
@@ -249,7 +249,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     margin-bottom: 5px;
 }
 
-.btn-criar{
+.login-btn-criar{
     display: block;
     position: absolute;
     width: 120px;
@@ -503,7 +503,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     display: none;
 }
 
-.linhaSeparar{
+.cadastro-linhaSeparadora{
     width: 430px;
     height: 1px;
     background:linear-gradient(136deg, rgba(255, 0, 198, 1) 0%, rgba(255, 255, 0, 1) 100%);     
@@ -511,7 +511,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     border-radius: 1px;
 }
 
-.h1-entra{
+.cadastro-h1-entrar{
     color: white;
     text-align: center;
     transform: translate(0px,190px);
@@ -519,7 +519,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     margin-bottom: 5px;
 }
 
-.btn-entrar{
+.cadastro-btn-entrar{
     display: block;
     position: absolute;
     width: 120px;
@@ -535,7 +535,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 @media screen and (max-width: 462px){
 
-    .aba-login {
+    .cadastro-login {
         background-color:transparent;
         position: fixed;
         top: 50%;
@@ -556,7 +556,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 @media screen and (max-width: 354px){
 
-    .aba-login {
+    .cadastro-login {
         background-color:transparent;
         position: fixed;
         top: 50%;
@@ -586,19 +586,19 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         padding-left: 200px;
     }
 
-    .btn-enter{
+    .btn-login-enter{
         width: 250px;
         height: 30px;
         transform: translate(98px,150px);
     }
 
-    .input-user {
+    .login-input {
         width: 250px;
         height: 30px;
         transform: translate(100px,130px);
     }
 
-    .person {
+    .login-span-person {
         position: relative;
         float: right;
         color: rgba(0, 0, 255, 0.596);

@@ -1,29 +1,29 @@
 import utils from './exibirEscondeCard.js'
-let btnEnter = document.getElementById('btn-enter')
+let btnEnter = document.getElementById('btn-login-enter')
 let btnPesquisa = document.getElementById('btn-pesquisa')
 let close = document.getElementById('close')
 let btnAddress = document.getElementById('btn-address')
 let btnSobre = document.getElementById('btn-sobre')
 let btnCompany = document.getElementById('btn-company')
-let inputUser = document.getElementById('input-user')
+let inputUser = document.getElementById('login-input-user')
 let btnCadastrar = document.getElementById('btn-cadastrar')
-let nome = document.getElementById('input-name')
-let usuario = document.getElementById('input-usuario')
-let senha = document.getElementById('input-password')
-let nomeLogin = document.getElementById('input-user')
+let nome = document.getElementById('cadastro-input-name')
+let usuario = document.getElementById('cadastro-input-usuario')
+let senha = document.getElementById('cadastro-input-password')
+let nomeLogin = document.getElementById('login-input-user')
 let inputPesquisa = document.getElementById('input-pesquisa')
-let senhaLogin = document.getElementById('input-senha')
+let senhaLogin = document.getElementById('login-input-senha')
 let visualizarSenha = document.getElementById('visualizar-senha')
-let exibirSenhaLogin = document.getElementById('visualizarSenha')
-let btnExibirCadastro = document.getElementById('btn-criar')
-let btnExibirLogin = document.getElementById('btn-entrar')
+let exibirSenhaLogin = document.getElementById('visualizarSenhaLogin')
+let btnExibirCadastro = document.getElementById('login-btn-criar')
+let btnExibirLogin = document.getElementById('cadastro-btn-entrar')
 
 
 import getUserData from './pegarDados.js'
-import acessar from './cadastrarUser.js'
+import funcoesUsuarios from './cadastrarUser.js'
 
 function cadastrarUser() {
-    acessar.cadastrar()
+    funcoesUsuarios.cadastrarUsuario()
     utils.valida_form()
     // acessar.entrar()
 }
@@ -34,7 +34,7 @@ function card() {
     inputUser.value = ''
     senhaLogin.value = ''
     utils.trocarCoresLogin()
-    acessar.entrar()
+    funcoesUsuarios.acessarUsuario()
 }
 
 btnEnter.addEventListener('click', card, false)

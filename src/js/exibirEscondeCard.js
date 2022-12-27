@@ -1,4 +1,4 @@
-let login = document.getElementById('aba-login')
+let login = document.getElementById('cadastro-login')
 let localizarUser = document.getElementById('localizar-user')
 let card = document.getElementById('card')
 let informAddress = document.getElementById('inform-address')
@@ -8,26 +8,26 @@ let btnAddress = document.getElementById('btn-address')
 let btnSobre = document.getElementById('btn-sobre')
 let btnCompany = document.getElementById('btn-company')
 let campoObrigatorio = document.getElementById('campo-obrigatorio')
-let abaCadastrar = document.getElementById('aba-cadastrar')
-let campoCadastro = document.getElementById('campo-cadastro')
+let abaCadastrar = document.getElementById('card-cadastrar')
+let campoCadastro = document.getElementById('h1-userCadastrando')
 let validacaoCampos = document.getElementById('validacao-campos')
 
-let nome = document.getElementById('input-name')
+let nome = document.getElementById('cadastro-input-name')
 let labelNome = document.getElementById('name-label')
 
-let usuario = document.getElementById('input-usuario')
+let usuario = document.getElementById('cadastro-input-usuario')
 let labelUser = document.getElementById('user-label')
 
-let senha = document.getElementById('input-password')
+let senha = document.getElementById('cadastro-input-password')
 let labelSenha = document.getElementById('senha-label')
 
-let nomeLogin = document.getElementById('input-user')
-let labelNomeLogin = document.getElementById('user-input')
-let spanNome = document.getElementById('person')
+let nomeLogin = document.getElementById('login-input-user')
+let labelNomeLogin = document.getElementById('login-label')
+let spanNome = document.getElementById('login-span-person')
 
-let senhaLogin = document.getElementById('input-senha')
-let labelSenhaLogin = document.getElementById('senha-input')
-let spanSenha = document.getElementById('lock')
+let senhaLogin = document.getElementById('login-input-senha')
+let labelSenhaLogin = document.getElementById('login-label-senha')
+let spanSenha = document.getElementById('login-span-lock')
 
 
 function exibirCard() {
