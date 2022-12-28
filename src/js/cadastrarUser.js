@@ -1,20 +1,20 @@
 import utils from './exibirEscondeCard.js'
-let cadastro_nome = document.getElementById('cadastro-input-name')
-let cadastro_usuario = document.getElementById('cadastro-input-usuario')
-let cadastro_senha = document.getElementById('cadastro-input-senha')
+let cadastroNome = document.getElementById('cadastro-input-name')
+let cadastroUsuario = document.getElementById('cadastro-input-usuario')
+let cadastroSenha = document.getElementById('cadastro-input-senha')
 
-let login_inputUser = document.getElementById('login-input-user')
-let login_inputSenha = document.getElementById('login-input-senha')
+let loginInputUser = document.getElementById('login-input-user')
+let loginInputSenha = document.getElementById('login-input-senha')
 
 function cadastrarUsuario() {
-    if(cadastro_usuario.value && cadastro_senha.value !=""){
+    if(cadastroUsuario.value && cadastroSenha.value !=""){
         let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
 
         listaUser.push(
             {
-                nomeCad: cadastro_nome.value,
-                userCad: cadastro_usuario.value,
-                senhaCad: cadastro_senha.value
+                nomeCad: cadastroNome.value,
+                userCad: cadastroUsuario.value,
+                senhaCad: cadastroSenha.value
             }
         )
 
@@ -23,22 +23,21 @@ function cadastrarUsuario() {
     }else{
         utils.exibirCampo()
     }
-    
 }
 
 function acessarUsuario() {
-    let listaUser = []
+    let listaUsuarioCadastrado = []
 
     let userValid = {
         nome: '',
         user: '',
         senha: '',
     }
-    listaUser = JSON.parse(localStorage.getItem('listaUser'))
-    // console.log(listaUser)
+    listaUsuarioCadastrado = JSON.parse(localStorage.getItem('listaUser'))
+    console.log(listaUsuarioCadastrado)
 
-    listaUser.forEach((item) => {
-        if(login_inputUser.value == item.userCad && login_inputSenha.value == item.senhaCad){
+    listaUsuarioCadastrado.forEach((item) => {
+        if(loginInputUser.value == item.userCad && loginInputSenha.value == item.senhaCad){
 
             userValid = {
                 nome: item.nomeCad,
