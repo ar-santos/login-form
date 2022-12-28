@@ -1,56 +1,268 @@
-let login = document.getElementById('cadastro-login')
+let cardCadastrar = document.getElementById('card-cadastrar')
+let inputNameCadastro = document.getElementById('cadastro-input-name')
+let labelNomeCadastro = document.getElementById('name-label-cadastro')
+let inputUsuarioCadastro = document.getElementById('cadastro-input-usuario')
+let labelUserCadastro = document.getElementById('user-label-cadastro')
+let inputSenhaCadastro = document.getElementById('cadastro-input-senha')
+let labelSenhaCadastro = document.getElementById('senha-label-cadastro')
+let userCadastrando = document.getElementById('h1-userCadastrando')
+let validacaoCampos = document.getElementById('validacao-campos')
+
+let login = document.getElementById('card-login')
+let inputNomeLogin = document.getElementById('login-input-user')
+let labelNomeLogin = document.getElementById('login-label-nome')
+let spanNome = document.getElementById('login-span-person')
+let inputSenhaLogin = document.getElementById('login-input-senha')
+let labelSenhaLogin = document.getElementById('login-label-senha')
+let spanSenha = document.getElementById('login-span-lock')
+
 let localizarUser = document.getElementById('localizar-user')
-let card = document.getElementById('card')
+let campoObrigatorio = document.getElementById('campo-obrigatorio')
+
+let cardInform = document.getElementById('card-inform')
 let informAddress = document.getElementById('inform-address')
 let informSobre = document.getElementById('inform-sobre')
 let informCompany = document.getElementById('inform-company')
 let btnAddress = document.getElementById('btn-address')
 let btnSobre = document.getElementById('btn-sobre')
 let btnCompany = document.getElementById('btn-company')
-let campoObrigatorio = document.getElementById('campo-obrigatorio')
-let abaCadastrar = document.getElementById('card-cadastrar')
-let campoCadastro = document.getElementById('h1-userCadastrando')
-let validacaoCampos = document.getElementById('validacao-campos')
 
-let nome = document.getElementById('cadastro-input-name')
-let labelNome = document.getElementById('name-label')
+function exibirCardCadastro() {
+    if (cardCadastrar.style.display == 'none') {
+        login.style.display = 'none';
+        cardCadastrar.style.display = 'block';
+        userCadastrando.style.display = 'none';
+        inputNameCadastro.style.borderBottomColor = 'white';
+        labelNomeCadastro.style.color = 'white';
+        inputSenhaCadastro.style.borderBottomColor = 'white';
+        labelSenhaCadastro.style.color = 'white';
+        inputUsuarioCadastro.style.borderBottomColor = 'white';
+        labelUserCadastro.style.color = 'white';
+    } else { 
+        login.style.display = 'none'  
+        cardCadastrar.style.display = 'block';
+        userCadastrando.style.display = 'none';
+        inputNameCadastro.style.borderBottomColor = 'white';
+        labelNomeCadastro.style.color = 'white';
+        inputSenhaCadastro.style.borderBottomColor = 'white';
+        labelSenhaCadastro.style.color = 'white';
+        inputUsuarioCadastro.style.borderBottomColor = 'white';
+        labelUserCadastro.style.color = 'white';
+    } 
+}
 
-let usuario = document.getElementById('cadastro-input-usuario')
-let labelUser = document.getElementById('user-label')
+function exibirCampoCadastro() {
+    if (userCadastrando.style.display == 'block') {
+        userCadastrando.style.display = 'block'
+        inputNameCadastro.style.borderBottomColor = 'white';
+        labelNomeCadastro.style.color = 'white';
+        inputSenhaCadastro.style.borderBottomColor = 'white';
+        labelSenhaCadastro.style.color = 'white';
+        inputUsuarioCadastro.style.borderBottomColor = 'white';
+        labelUserCadastro.style.color = 'white';
+        labelNomeCadastro.innerHTML = 'Nome';
+        labelUserCadastro.innerHTML = 'Usuário'
+        labelSenhaCadastro.innerHTML = 'Senha'
 
-let senha = document.getElementById('cadastro-input-password')
-let labelSenha = document.getElementById('senha-label')
+    } else { 
+        userCadastrando.style.display = 'block'
+        inputNameCadastro.style.borderBottomColor = 'white';
+        labelNomeCadastro.style.color = 'white';
+        inputSenhaCadastro.style.borderBottomColor = 'white';
+        labelSenhaCadastro.style.color = 'white';
+        inputUsuarioCadastro.style.borderBottomColor = 'white';
+        labelUserCadastro.style.color = 'white';
+        labelNomeCadastro.innerHTML = 'Nome';
+        labelUserCadastro.innerHTML = 'Usuário'
+        labelSenhaCadastro.innerHTML = 'Senha'
+    } 
+}
 
-let nomeLogin = document.getElementById('login-input-user')
-let labelNomeLogin = document.getElementById('login-label')
-let spanNome = document.getElementById('login-span-person')
+function validarCardCadastro (){
+    if(inputNameCadastro.value.length < 3){
+    validacaoCampos.style.display = 'block';
+    inputNameCadastro.focus();
+    return false
+ }else if(inputUsuarioCadastro.value.length < 5){
+    validacaoCampos.style.display = 'block';
+    inputUsuarioCadastro.focus();
+    return false
+ }else if(inputSenhaCadastro.value.length < 8){
+    validacaoCampos.style.display = 'block';
+    inputSenhaCadastro.focus();
+    return false
+ }else{
+    validacaoCampos.style.display = 'none';
 
-let senhaLogin = document.getElementById('login-input-senha')
-let labelSenhaLogin = document.getElementById('login-label-senha')
-let spanSenha = document.getElementById('login-span-lock')
+     exibirCampoCadastro()
 
+     setTimeout(()=> {
+        exibirFormLogin()
+    },3000)
+
+    inputNameCadastro.value = ''
+    inputUsuarioCadastro.value = ''
+    inputSenhaCadastro.value = ''
+ }
+}
+
+function validarlabelNameCadastro() {
+    if (inputNameCadastro.value.length <= 2) {
+        labelNomeCadastro.style.color = 'red';
+        labelNomeCadastro.innerHTML = 'Nome *Insira no minimo 3 caracteres'
+        inputNameCadastro.style.borderBottomColor = 'red';
+    } else { 
+        labelNomeCadastro.style.color = 'green';
+        labelNomeCadastro.innerHTML = 'Nome'
+        inputNameCadastro.style.borderBottomColor = 'green';
+    } 
+}
+
+function validarLabelUsuarioCadastro() {
+    if (inputUsuarioCadastro.value.length <= 4) {
+        labelUserCadastro.style.color = 'red';
+        labelUserCadastro.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
+        inputUsuarioCadastro.style.borderBottomColor = 'red';
+    } else { 
+        labelUserCadastro.style.color = 'green';
+        labelUserCadastro.innerHTML = 'Usuário'
+        inputUsuarioCadastro.style.borderBottomColor = 'green';
+    } 
+}
+
+function validarLabelSenhaCadastro() {
+    if (inputSenhaCadastro.value.length <= 7) {
+        labelSenhaCadastro.style.color = 'red';
+        labelSenhaCadastro.innerHTML = 'Senha *Insira no minimo 8 caracteres'
+        inputSenhaCadastro.style.borderBottomColor = 'red';
+    } else { 
+        labelSenhaCadastro.style.color = 'green';
+        labelSenhaCadastro.innerHTML = 'Senha'
+        inputSenhaCadastro.style.borderBottomColor = 'green';
+    } 
+}
+
+function visualizarSenhaCadastro() {
+    if(inputSenhaCadastro.getAttribute('type') == 'password'){
+        inputSenhaCadastro.setAttribute('type', 'text')
+    }else{
+        inputSenhaCadastro.setAttribute('type', 'password')
+    }
+}
+
+function exibirCardLogin() {
+    if (login.style.display == 'none') {
+        login.style.display = 'block'
+        cardCadastrar.style.display = 'none';
+        inputNameCadastro.style.borderBottomColor = 'white';
+        labelNomeCadastro.style.color = 'white';
+        inputSenhaCadastro.style.borderBottomColor = 'white';
+        labelSenhaCadastro.style.color = 'white';
+        inputUsuarioCadastro.style.borderBottomColor = 'white';
+        labelUserCadastro.style.color = 'white';
+        labelNomeCadastro.innerHTML = 'Nome';
+        labelUserCadastro.innerHTML = 'Usuário'
+        labelSenhaCadastro.innerHTML = 'Senha'
+
+    } else { 
+        login.style.display = 'block'
+        cardCadastrar.style.display = 'none';
+        inputNameCadastro.style.borderBottomColor = 'white';
+        labelNomeCadastro.style.color = 'white';
+        inputSenhaCadastro.style.borderBottomColor = 'white';
+        labelSenhaCadastro.style.color = 'white';
+        inputUsuarioCadastro.style.borderBottomColor = 'white';
+        labelUserCadastro.style.color = 'white';
+        labelNomeCadastro.innerHTML = 'Nome';
+        labelUserCadastro.innerHTML = 'Usuário'
+        labelSenhaCadastro.innerHTML = 'Senha'
+    } 
+}
+
+function exibirFormLogin() {
+    if (cardCadastrar.style.display == 'block') {
+        login.style.display = 'block';
+        cardCadastrar.style.display = 'none';
+        labelNomeCadastro.innerHTML = 'Nome';
+        labelSenhaLogin.innerHTML = 'Senha';
+
+    } else { 
+        login.style.display = 'block';
+        cardCadastrar.style.display = 'none';  
+        labelNomeCadastro.innerHTML = 'Nome';
+        labelSenhaLogin.innerHTML = 'Senha';
+
+    } 
+}
+
+
+function trocarCoresLogin() {
+    if(userCadastrando.style.display == 'block'){
+        inputNomeLogin.style.borderBottomColor = 'white';
+        labelNomeLogin.style.color = 'white';
+        spanNome.style.color = 'white';
+        labelSenhaLogin.style.color = 'white';
+        inputSenhaLogin.style.borderBottomColor = 'white';
+        spanSenha.style.color = 'white';
+        labelNomeLogin.innerHTML = 'Usuário';
+        labelSenhaLogin.innerHTML = 'Senha'
+    }else{
+        inputNomeLogin.style.borderBottomColor = 'white';
+        labelNomeLogin.style.color = 'white';
+        spanNome.style.color = 'white';
+        labelSenhaLogin.style.color = 'white';
+        inputSenhaLogin.style.borderBottomColor = 'white';
+        spanSenha.style.color = 'white';
+        labelNomeLogin.innerHTML = 'Usuário';
+        labelSenhaLogin.innerHTML = 'Senha'
+    }
+}
+
+function validarLabelNameLogin() {
+    if (inputNomeLogin.value.length <= 2) {
+        labelNomeLogin.style.color = 'red';
+        labelNomeLogin.innerHTML = 'Usuário *Insira no minimo 3 caracteres'
+        inputNomeLogin.style.borderBottomColor = 'red';
+        spanNome.style.color = 'red';
+
+    } else { 
+        labelNomeLogin.style.color = 'green';
+        labelNomeLogin.innerHTML = 'Usuário';
+        inputNomeLogin.style.borderBottomColor = 'green';
+        spanNome.style.color = 'green';
+    } 
+}
+
+function validarLabelSenhaLogin() {
+    if (inputSenhaLogin.value.length <= 7) {
+        labelSenhaLogin.style.color = 'red';
+        labelSenhaLogin.innerHTML = 'Senha *Insira no minimo 8 caracteres'
+        inputSenhaLogin.style.borderBottomColor = 'red';
+        spanSenha.style.color = 'red';
+    } else { 
+        labelSenhaLogin.style.color = 'green';
+        labelSenhaLogin.innerHTML = 'Senha'
+        inputSenhaLogin.style.borderBottomColor = 'green';
+        spanSenha.style.color = 'green';
+    } 
+}
+
+function visualizarSenhaLogin() {
+    if(inputSenhaLogin.getAttribute('type') == 'password'){
+        inputSenhaLogin.setAttribute('type', 'text')
+    }else{
+        inputSenhaLogin.setAttribute('type', 'password')
+    }
+}
 
 function exibirCard() {
     if (localizarUser.style.display == 'block') {
         localizarUser.style.display = 'none';
-        card.style.display = 'block';
+        cardInform.style.display = 'block';
     } else { 
         localizarUser.style.display = 'none'  
-        card.style.display = 'block';
+        cardInform.style.display = 'block';
     } 
-}
-
-function fecharCard() {
-    if (card.style.display == 'block') {
-        localizarUser.style.display = 'block'
-        card.style.display = 'none'
-        nomeLogin.style.borderBottomColor = 'white';
-        labelNomeLogin.style.color = 'white';
-        spanNome.style.color = 'white';
-        labelSenhaLogin.style.color = 'white';
-        senhaLogin.style.borderBottomColor = 'white';
-        spanSenha.style.color = 'white';
-    }
 }
 
 function exibirAddress() {
@@ -69,10 +281,9 @@ function exibirAddress() {
        btnSobre.style.background = '#8080804c';
        btnCompany.style.background = '#8080804c';
     } 
- }   
+}  
 
-
-function exibirInformSobre() {
+ function exibirInformSobre() {
     if (informSobre.style.display == 'block') {
         informCompany.style.display = 'none'
         informSobre.style.display = 'block'
@@ -108,31 +319,20 @@ function exibirInformCompany() {
     }
 }
 
-function exibirCadastro() {
-    if (abaCadastrar.style.display == 'none') {
-        login.style.display = 'none';
-        abaCadastrar.style.display = 'block';
-        campoCadastro.style.display = 'none';
-        nome.style.borderBottomColor = 'white';
-        labelNome.style.color = 'white';
-        senha.style.borderBottomColor = 'white';
-        labelSenha.style.color = 'white';
-        usuario.style.borderBottomColor = 'white';
-        labelUser.style.color = 'white';
-    } else { 
-        login.style.display = 'none'  
-        abaCadastrar.style.display = 'block';
-        campoCadastro.style.display = 'none';
-        nome.style.borderBottomColor = 'white';
-        labelNome.style.color = 'white';
-        senha.style.borderBottomColor = 'white';
-        labelSenha.style.color = 'white';
-        usuario.style.borderBottomColor = 'white';
-        labelUser.style.color = 'white';
-    } 
+function fecharCard() {
+    if (cardInform.style.display == 'block') {
+        localizarUser.style.display = 'block'
+        cardInform.style.display = 'none'
+        inputNomeLogin.style.borderBottomColor = 'white';
+        labelNomeLogin.style.color = 'white';
+        spanNome.style.color = 'white';
+        labelSenhaLogin.style.color = 'white';
+        inputSenhaLogin.style.borderBottomColor = 'white';
+        spanSenha.style.color = 'white';
+    }
 }
 
-function campo() {
+function exibirCampo() {
     if (campoObrigatorio.style.display == 'none') {
        campoObrigatorio.style.display = 'block';
     } else { 
@@ -146,230 +346,27 @@ function OcultarCampo() {
     } else { 
        campoObrigatorio.style.display = 'none'  
     } 
- }
-
- function exibirCampoCadastro() {
-    if (campoCadastro.style.display == 'block') {
-        campoCadastro.style.display = 'block'
-        nome.style.borderBottomColor = 'white';
-        labelNome.style.color = 'white';
-        senha.style.borderBottomColor = 'white';
-        labelSenha.style.color = 'white';
-        usuario.style.borderBottomColor = 'white';
-        labelUser.style.color = 'white';
-        labelNome.innerHTML = 'Nome';
-        labelUser.innerHTML = 'Usuário'
-        labelSenha.innerHTML = 'Senha'
-
-    } else { 
-        campoCadastro.style.display = 'block'
-        nome.style.borderBottomColor = 'white';
-        labelNome.style.color = 'white';
-        senha.style.borderBottomColor = 'white';
-        labelSenha.style.color = 'white';
-        usuario.style.borderBottomColor = 'white';
-        labelUser.style.color = 'white';
-        labelNome.innerHTML = 'Nome';
-        labelUser.innerHTML = 'Usuário'
-        labelSenha.innerHTML = 'Senha'
-    } 
-}
-
- function exibirFormLogin() {
-    if (abaCadastrar.style.display == 'block') {
-        login.style.display = 'block';
-        abaCadastrar.style.display = 'none';
-        labelNome.innerHTML = 'Nome';
-        labelSenhaLogin.innerHTML = 'Senha';
-
-    } else { 
-        login.style.display = 'block';
-        abaCadastrar.style.display = 'none';  
-        labelNome.innerHTML = 'Nome';
-        labelSenhaLogin.innerHTML = 'Senha';
-
-    } 
-}
-
-function valida_form (){
-    if(nome.value.length < 3){
-    validacaoCampos.style.display = 'block';
-    nome.focus();
-    return false
- }else if(usuario.value.length < 5){
-    validacaoCampos.style.display = 'block';
-    usuario.focus();
-    return false
- }else if(senha.value.length < 8){
-    validacaoCampos.style.display = 'block';
-    senha.focus();
-    return false
- }else{
-    validacaoCampos.style.display = 'none';
-
-     exibirCampoCadastro()
-
-     setTimeout(()=> {
-        exibirFormLogin()
-    },3000)
-
-    nome.value = ''
-    usuario.value = ''
-    senha.value = ''
- }
-}
-
-function exibirCampoLogin() {
-    if (login.style.display == 'none') {
-        login.style.display = 'block'
-        abaCadastrar.style.display = 'none';
-        nome.style.borderBottomColor = 'white';
-        labelNome.style.color = 'white';
-        senha.style.borderBottomColor = 'white';
-        labelSenha.style.color = 'white';
-        usuario.style.borderBottomColor = 'white';
-        labelUser.style.color = 'white';
-        labelNome.innerHTML = 'Nome';
-        labelUser.innerHTML = 'Usuário'
-        labelSenha.innerHTML = 'Senha'
-
-    } else { 
-        login.style.display = 'block'
-        abaCadastrar.style.display = 'none';
-        nome.style.borderBottomColor = 'white';
-        labelNome.style.color = 'white';
-        senha.style.borderBottomColor = 'white';
-        labelSenha.style.color = 'white';
-        usuario.style.borderBottomColor = 'white';
-        labelUser.style.color = 'white';
-        labelNome.innerHTML = 'Nome';
-        labelUser.innerHTML = 'Usuário'
-        labelSenha.innerHTML = 'Senha'
-    } 
-}
-
-function labelName() {
-    if (nome.value.length <= 2) {
-        labelNome.style.color = 'red';
-        labelNome.innerHTML = 'Nome *Insira no minimo 3 caracteres'
-        nome.style.borderBottomColor = 'red';
-    } else { 
-        labelNome.style.color = 'green';
-        labelNome.innerHTML = 'Nome'
-        nome.style.borderBottomColor = 'green';
-    } 
-}
-
-function labelUsuario() {
-    if (usuario.value.length <= 4) {
-        labelUser.style.color = 'red';
-        labelUser.innerHTML = 'Usuário *Insira no minimo 5 caracteres'
-        usuario.style.borderBottomColor = 'red';
-    } else { 
-        labelUser.style.color = 'green';
-        labelUser.innerHTML = 'Usuário'
-        usuario.style.borderBottomColor = 'green';
-    } 
-}
-
-function confirmSenha() {
-    if (senha.value.length <= 7) {
-        labelSenha.style.color = 'red';
-        labelSenha.innerHTML = 'Senha *Insira no minimo 8 caracteres'
-        senha.style.borderBottomColor = 'red';
-    } else { 
-        labelSenha.style.color = 'green';
-        labelSenha.innerHTML = 'Senha'
-        senha.style.borderBottomColor = 'green';
-    } 
-}
-
-function LoginEnterName() {
-    if (nomeLogin.value.length <= 2) {
-        labelNomeLogin.style.color = 'red';
-        labelNomeLogin.innerHTML = 'Usuário *Insira no minimo 3 caracteres'
-        nomeLogin.style.borderBottomColor = 'red';
-        spanNome.style.color = 'red';
-
-    } else { 
-        labelNomeLogin.style.color = 'green';
-        labelNomeLogin.innerHTML = 'Usuário';
-        nomeLogin.style.borderBottomColor = 'green';
-        spanNome.style.color = 'green';
-    } 
-}
-
-function confirmSenhalogin() {
-    if (senhaLogin.value.length <= 7) {
-        labelSenhaLogin.style.color = 'red';
-        labelSenhaLogin.innerHTML = 'Senha *Insira no minimo 8 caracteres'
-        senhaLogin.style.borderBottomColor = 'red';
-        spanSenha.style.color = 'red';
-    } else { 
-        labelSenhaLogin.style.color = 'green';
-        labelSenhaLogin.innerHTML = 'Senha'
-        senhaLogin.style.borderBottomColor = 'green';
-        spanSenha.style.color = 'green';
-    } 
-}
-
-function visualizarSenhaCadastro() {
-    if(senha.getAttribute('type') == 'password'){
-        senha.setAttribute('type', 'text')
-    }else{
-        senha.setAttribute('type', 'password')
-    }
-}
-
-function visualizarSenhaLogin() {
-    if(senhaLogin.getAttribute('type') == 'password'){
-        senhaLogin.setAttribute('type', 'text')
-    }else{
-        senhaLogin.setAttribute('type', 'password')
-    }
-}
-
-function trocarCoresLogin() {
-    if(campoCadastro.style.display == 'block'){
-        nomeLogin.style.borderBottomColor = 'white';
-        labelNomeLogin.style.color = 'white';
-        spanNome.style.color = 'white';
-        labelSenhaLogin.style.color = 'white';
-        senhaLogin.style.borderBottomColor = 'white';
-        spanSenha.style.color = 'white';
-        labelNomeLogin.innerHTML = 'Usuário';
-        labelSenhaLogin.innerHTML = 'Senha'
-    }else{
-        nomeLogin.style.borderBottomColor = 'white';
-        labelNomeLogin.style.color = 'white';
-        spanNome.style.color = 'white';
-        labelSenhaLogin.style.color = 'white';
-        senhaLogin.style.borderBottomColor = 'white';
-        spanSenha.style.color = 'white';
-        labelNomeLogin.innerHTML = 'Usuário';
-        labelSenhaLogin.innerHTML = 'Senha'
-    }
 }
 
 const utils =  {
+    exibirCardCadastro,
+    validarCardCadastro,
+    validarlabelNameCadastro,
+    validarLabelUsuarioCadastro,
+    validarLabelSenhaCadastro,
+    visualizarSenhaCadastro,
+    exibirCardLogin,
+    trocarCoresLogin,
+    validarLabelNameLogin,
+    validarLabelSenhaLogin,
+    visualizarSenhaLogin,
     exibirCard,
-    fecharCard,
     exibirAddress,
     exibirInformSobre,
     exibirInformCompany,
-    campo,
+    fecharCard,
+    exibirCampo,
     OcultarCampo,
-    valida_form,
-    labelName,
-    labelUsuario,
-    confirmSenha,
-    LoginEnterName,
-    confirmSenhalogin,
-    visualizarSenhaCadastro,
-    visualizarSenhaLogin,
-    exibirCadastro,
-    trocarCoresLogin,
-    exibirCampoLogin,
  }
  
  export default utils 

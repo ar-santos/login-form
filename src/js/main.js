@@ -1,103 +1,54 @@
 import utils from './exibirEscondeCard.js'
-let btnEnter = document.getElementById('btn-login-enter')
-let btnPesquisa = document.getElementById('btn-pesquisa')
-let close = document.getElementById('close')
-let btnAddress = document.getElementById('btn-address')
-let btnSobre = document.getElementById('btn-sobre')
-let btnCompany = document.getElementById('btn-company')
-let inputUser = document.getElementById('login-input-user')
-let btnCadastrar = document.getElementById('btn-cadastrar')
-let nome = document.getElementById('cadastro-input-name')
-let usuario = document.getElementById('cadastro-input-usuario')
-let senha = document.getElementById('cadastro-input-password')
-let nomeLogin = document.getElementById('login-input-user')
-let inputPesquisa = document.getElementById('input-pesquisarUser')
-let senhaLogin = document.getElementById('login-input-senha')
-let visualizarSenha = document.getElementById('visualizar-senha')
-let exibirSenhaLogin = document.getElementById('visualizarSenhaLogin')
-let btnExibirCadastro = document.getElementById('login-btn-criar')
-let btnExibirLogin = document.getElementById('cadastro-btn-entrar')
-
-
 import getUserData from './pegarDados.js'
 import funcoesUsuarios from './cadastrarUser.js'
 
-function cadastrarUser() {
-    funcoesUsuarios.cadastrarUsuario()
-    utils.valida_form()
-    // acessar.entrar()
+let inputNomeCad = document.getElementById('cadastro-input-name')
+let inputUsuarioCad = document.getElementById('cadastro-input-usuario')
+let inpuSenhaCad = document.getElementById('cadastro-input-senha')
+let btnExibirLogin = document.getElementById('cadastro-btn-entrar')
+let visualizarSenha = document.getElementById('visualizar-senha')
+let btnCadastrarUser = document.getElementById('btn-cadastrar')
+
+let inputUserLogin = document.getElementById('login-input-user')
+let inputSenhaLogin = document.getElementById('login-input-senha')
+let btnEnterLogin = document.getElementById('btn-login-enter')
+let btnExibirCadastro = document.getElementById('login-btn-criar')
+let exibirSenhaLogin = document.getElementById('visualizarSenhaLogin')
+
+let inputPesquisarUser = document.getElementById('input-pesquisarUser')
+let btnPesquisaUser = document.getElementById('btn-pesquisaUser')
+
+let close = document.getElementById('close-card')
+let btnAddress = document.getElementById('btn-address')
+let btnSobre = document.getElementById('btn-sobre')
+let btnCompany = document.getElementById('btn-company')
+
+function labelNomeCadastro() {
+    utils.validarlabelNameCadastro()
 }
 
-btnCadastrar.addEventListener('click', cadastrarUser, false)
+inputNomeCad.addEventListener('keyup', labelNomeCadastro, false)
 
-function card() {
-    inputUser.value = ''
-    senhaLogin.value = ''
-    utils.trocarCoresLogin()
-    funcoesUsuarios.acessarUsuario()
+function labelUsuarioCadastro() {
+    utils.validarLabelUsuarioCadastro()
 }
 
-btnEnter.addEventListener('click', card, false)
+inputUsuarioCad.addEventListener('keyup', labelUsuarioCadastro, false)
 
-function exibirPesquisar() {
-    getUserData()
-    inputPesquisa.value = ''
+function labelSenhaCadastro() {
+    utils.validarLabelSenhaCadastro()
 }
 
-btnPesquisa.addEventListener('click', exibirPesquisar, false)
+inpuSenhaCad.addEventListener('keyup', labelSenhaCadastro, false)
 
-
-inputUser.addEventListener('keyup', (e)=> {
-    (e.key === 'Enter' ? card() : null)
-})
-
-
-function closeCard() {
-    utils.fecharCard()
+function cardLogin() {
+    utils.exibirCardLogin()
+    inputNomeCad.value = ''
+    inputUsuarioCad.value = ''
+    inpuSenhaCad.value = ''
 }
 
-function informSobre() {
-    utils.exibirInformSobre()
-}
-
-function informAddress() {
-    utils.exibirAddress()
-}
-
-function informCompany() {
-    utils.exibirInformCompany()
-}
-
-
-function confirmaNome() {
-    utils.labelName()
-}
-
-nome.addEventListener('keyup', confirmaNome, false)
-
-function confirmaUser() {
-    utils.labelUsuario()
-}
-
-usuario.addEventListener('keyup', confirmaUser, false)
-
-function confirmaSenha() {
-    utils.confirmSenha()
-}
-
-senha.addEventListener('keyup', confirmaSenha, false)
-
-function confirmaLoginName() {
-    utils.LoginEnterName()
-}
-
-nomeLogin.addEventListener('keyup', confirmaLoginName, false)
-
-function confirmaLoginSenha() {
-    utils.confirmSenhalogin()
-}
-
-senhaLogin.addEventListener('keyup', confirmaLoginSenha, false)
+btnExibirLogin.addEventListener('click', cardLogin, false)
 
 function mostrarSenha() {
     utils.visualizarSenhaCadastro()
@@ -105,30 +56,81 @@ function mostrarSenha() {
 
 visualizarSenha.addEventListener('click', mostrarSenha, false)
 
+function cadastrarUser() {
+    funcoesUsuarios.cadastrarUsuario()
+    utils.validarCardCadastro()
+    // acessar.entrar()
+}
+
+btnCadastrarUser.addEventListener('click', cadastrarUser, false)
+
+function acessarUsuarioCadastrado() {
+    inputUserLogin.value = ''
+    inputSenhaLogin.value = ''
+    utils.trocarCoresLogin()
+    funcoesUsuarios.acessarUsuario()
+}
+
+btnEnterLogin.addEventListener('click', acessarUsuarioCadastrado, false)
+
+inputUserLogin.addEventListener('keyup', (e)=> {
+    (e.key === 'Enter' ? cardInform() : null)
+})
+
+function exibirPaginaCadastro() {
+    utils.exibirCardCadastro()
+    inputUserLogin.value = ''
+    inputSenhaLogin.value = ''
+    utils.trocarCoresLogin()
+}
+
+btnExibirCadastro.addEventListener('click', exibirPaginaCadastro, false)
+
 function mostrarSenhaLogin() {
     utils.visualizarSenhaLogin()
 }
 
 exibirSenhaLogin.addEventListener('click', mostrarSenhaLogin, false)
 
-function exibirPaginaCadastro() {
-    utils.exibirCadastro()
-    inputUser.value = ''
-    senhaLogin.value = ''
-    utils.trocarCoresLogin()
+function exibirPesquisa() {
+    getUserData()
+    inputPesquisarUser.value = ''
 }
 
-btnExibirCadastro.addEventListener('click', exibirPaginaCadastro, false)
+btnPesquisaUser.addEventListener('click', exibirPesquisa, false)
 
-function campoLogin() {
-   utils.exibirCampoLogin()
-   nome.value = ''
-   usuario.value = ''
-   senha.value = ''
+function closeCard() {
+    utils.fecharCard()
 }
-btnExibirLogin.addEventListener('click', campoLogin, false)
 
 close.addEventListener('click', closeCard, false)
-btnSobre.addEventListener('click', informSobre, false)
+
+function informAddress() {
+    utils.exibirAddress()
+}
+
 btnAddress.addEventListener('click', informAddress, false)
+
+function informSobre() {
+    utils.exibirInformSobre()
+}
+
+btnSobre.addEventListener('click', informSobre, false)
+
+function informCompany() {
+    utils.exibirInformCompany()
+}
+
 btnCompany.addEventListener('click', informCompany, false)
+
+function labelLoginSenha() {
+    utils.validarLabelSenhaLogin()
+}
+
+inputSenhaLogin.addEventListener('keyup', labelLoginSenha, false)
+
+function labelLoginName() {
+    utils.validarLabelNameLogin()
+}
+
+inputUserLogin.addEventListener('keyup', labelLoginName, false)

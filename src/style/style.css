@@ -112,7 +112,7 @@ body {
     display: none;
 }
 
-.cadastro-login {
+.card-login {
     background-color:#1c1c1cf6;
     width: 450px;
     height: 470px;
@@ -331,7 +331,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     color: white;
 }
 
-.btn-pesquisa{
+.btn-pesquisaUser{
     display: block;
     position: absolute;
     width: 340px;
@@ -354,7 +354,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     cursor: pointer;
 }
 
-.card{
+.card-inform{
     background-color:#1c1c1cf6;
     box-shadow: 0px 1px 10px 1px #000;
     width: 370px;
@@ -395,7 +395,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     z-index: 100;
 }
 
-.close {
+.close-card {
     color: rgba(255, 0, 198, 1);
     position: relative;
     display: flex;
@@ -535,7 +535,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 @media screen and (max-width: 462px){
 
-    .cadastro-login {
+    .card-login {
         background-color:transparent;
         position: fixed;
         top: 50%;
@@ -556,7 +556,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
 @media screen and (max-width: 354px){
 
-    .cadastro-login {
+    .card-login {
         background-color:transparent;
         position: fixed;
         top: 50%;
@@ -582,7 +582,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     
     }
 
-    .close {
+    .close-card {
         padding-left: 200px;
     }
 
@@ -613,7 +613,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         font-size: 8px;
     }
 
-    .card{
+    .card-inform{
         width: 250px;
         height: 450px;
     }

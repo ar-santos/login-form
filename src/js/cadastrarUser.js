@@ -1,7 +1,7 @@
 import utils from './exibirEscondeCard.js'
 let cadastro_nome = document.getElementById('cadastro-input-name')
 let cadastro_usuario = document.getElementById('cadastro-input-usuario')
-let cadastro_senha = document.getElementById('cadastro-input-password')
+let cadastro_senha = document.getElementById('cadastro-input-senha')
 
 let login_inputUser = document.getElementById('login-input-user')
 let login_inputSenha = document.getElementById('login-input-senha')
@@ -21,7 +21,7 @@ function cadastrarUsuario() {
         localStorage.setItem('listaUser', JSON.stringify(listaUser))
 
     }else{
-        utils.campo()
+        utils.exibirCampo()
     }
     
 }
