@@ -65,10 +65,10 @@ function cadastrarUser() {
 btnCadastrarUser.addEventListener('click', cadastrarUser, false)
 
 function acessarUsuarioCadastrado() {
-    inputUserLogin.value = ''
-    inputSenhaLogin.value = ''
     utils.trocarCoresLogin()
     funcoesUsuarios.acessarUsuario()
+    inputUserLogin.value = ''
+    inputSenhaLogin.value = ''
 }
 
 btnEnterLogin.addEventListener('click', acessarUsuarioCadastrado, false)
