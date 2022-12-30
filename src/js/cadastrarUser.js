@@ -21,7 +21,7 @@ function cadastrarUsuario() {
         localStorage.setItem('listaUser', JSON.stringify(listaUser))
 
     }else{
-        utils.exibirCampo()
+        utils.exibirCampoPequisarUser()
     }
 }
 
@@ -48,6 +48,15 @@ function acessarUsuario() {
     })
 
     console.log(userValid)
+
+    if(loginInputUser.value == userValid.user && loginInputSenha.value == userValid.senha){
+
+        utils.pesquisarUsuario()
+        utils.ocultarCampoLogin()
+        
+    }else {
+        utils.exibirCampoObrigatorioLogin()
+    }
 }
 
 const funcoesUsuarios = {

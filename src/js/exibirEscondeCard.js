@@ -14,6 +14,7 @@ let labelNomeLogin = document.getElementById('login-label-nome')
 let spanNome = document.getElementById('login-span-person')
 let inputSenhaLogin = document.getElementById('login-input-senha')
 let labelSenhaLogin = document.getElementById('login-label-senha')
+let campoObrigatorioLogin = document.getElementById('campo-obrigatorio-login')
 let spanSenha = document.getElementById('login-span-lock')
 
 let localizarUser = document.getElementById('localizar-user')
@@ -332,7 +333,17 @@ function fecharCard() {
     }
 }
 
-function exibirCampo() {
+function pesquisarUsuario() {
+    if (localizarUser.style.display == 'none') {
+        localizarUser.style.display = 'block';
+        login.style.display = 'none'
+     } else { 
+        localizarUser.style.display = 'block' 
+        login.style.display = 'none'
+     } 
+}
+
+function exibirCampoPequisarUser() {
     if (campoObrigatorio.style.display == 'none') {
        campoObrigatorio.style.display = 'block';
     } else { 
@@ -348,6 +359,36 @@ function OcultarCampo() {
     } 
 }
 
+function exibirCampoObrigatorioLogin() {
+    if (campoObrigatorioLogin.style.display == 'none') {
+        campoObrigatorioLogin.style.display = 'block';
+        labelNomeLogin.style.color = 'red';
+        inputNomeLogin.style.borderBottomColor = 'red';
+        spanNome.style.color = 'red';
+        inputSenhaLogin.style.borderBottomColor = 'red';
+        spanSenha.style.color = 'red';
+        labelSenhaLogin.style.color = 'red';
+        inputNomeLogin.focus()
+    } else { 
+        campoObrigatorioLogin.style.display = 'block'  
+        labelNomeLogin.style.color = 'red';
+        inputNomeLogin.style.borderBottomColor = 'red';
+        spanNome.style.color = 'red';
+        inputSenhaLogin.style.borderBottomColor = 'red';
+        spanSenha.style.color = 'red';
+        labelSenhaLogin.style.color = 'red';
+        inputNomeLogin.focus()
+    } 
+}
+
+function ocultarCampoLogin() {
+    if (campoObrigatorioLogin.style.display == 'block') {
+        campoObrigatorioLogin.style.display = 'none';
+    } else { 
+        campoObrigatorioLogin.style.display = 'none'  
+    } 
+}
+
 const utils =  {
     exibirCardCadastro,
     validarCardCadastro,
@@ -360,12 +401,15 @@ const utils =  {
     validarLabelNameLogin,
     validarLabelSenhaLogin,
     visualizarSenhaLogin,
+    exibirCampoObrigatorioLogin,
+    ocultarCampoLogin,
+    pesquisarUsuario,
     exibirCard,
     exibirAddress,
     exibirInformSobre,
     exibirInformCompany,
     fecharCard,
-    exibirCampo,
+    exibirCampoPequisarUser,
     OcultarCampo,
  }
  

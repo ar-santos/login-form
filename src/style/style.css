@@ -503,6 +503,14 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     display: none;
 }
 
+.campo-obrigatorio-login{
+    color: red;
+    font-size: 9px;
+    text-align: center;
+    transform: translate(16px, 122px);
+    display: none;
+}
+
 .cadastro-linhaSeparadora{
     width: 430px;
     height: 1px;
@@ -545,12 +553,30 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     }
 
-    .aba-cadastrar{
+    .card-cadastrar{
         background-color:transparent;
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .localizar-user{
+            background-color:transparent;
+            box-shadow: none;
+    }
+
+    .input-pesquisarUser{
+        width: 340px;
+        transform: translate(60px,155px);
+    }
+
+    .input-pesquisarUsuarios label{
+        transform: translate(60px,105px);
+    }
+
+    .pesquisarUsuarioIcon{
+        transform: translate(370px,118px);
     }
 }
 
