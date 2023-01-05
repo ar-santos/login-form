@@ -15,6 +15,7 @@ let spanNome = document.getElementById('login-span-person')
 let inputSenhaLogin = document.getElementById('login-input-senha')
 let labelSenhaLogin = document.getElementById('login-label-senha')
 let campoObrigatorioLogin = document.getElementById('campo-obrigatorio-login')
+let campoObrigatorioLoginInput = document.getElementById('campo-obrigatorio-login-input')
 let spanSenha = document.getElementById('login-span-lock')
 
 let localizarUser = document.getElementById('localizar-user')
@@ -334,12 +335,21 @@ function fecharCard() {
 }
 
 function pesquisarUsuario() {
-    if (localizarUser.style.display == 'none') {
+    if (localizarUser.style.display == 'none' && inputNomeLogin.value !="" && inputSenhaLogin.value !="") {
         localizarUser.style.display = 'block';
         login.style.display = 'none'
+        campoObrigatorioLoginInput.style.display = 'none'
      } else { 
-        localizarUser.style.display = 'block' 
-        login.style.display = 'none'
+        localizarUser.style.display = 'none'
+        login.style.display = 'block'
+        campoObrigatorioLoginInput.style.display = 'block'
+        labelNomeLogin.style.color = 'red';
+        inputNomeLogin.style.borderBottomColor = 'red';
+        spanNome.style.color = 'red';
+        inputSenhaLogin.style.borderBottomColor = 'red';
+        spanSenha.style.color = 'red';
+        labelSenhaLogin.style.color = 'red';
+        inputNomeLogin.focus()
      } 
 }
 
@@ -362,6 +372,7 @@ function OcultarCampo() {
 function exibirCampoObrigatorioLogin() {
     if (campoObrigatorioLogin.style.display == 'none') {
         campoObrigatorioLogin.style.display = 'block';
+        campoObrigatorioLoginInput.style.display = 'none'
         labelNomeLogin.style.color = 'red';
         inputNomeLogin.style.borderBottomColor = 'red';
         spanNome.style.color = 'red';
@@ -371,6 +382,7 @@ function exibirCampoObrigatorioLogin() {
         inputNomeLogin.focus()
     } else { 
         campoObrigatorioLogin.style.display = 'block'  
+        campoObrigatorioLoginInput.style.display = 'none'
         labelNomeLogin.style.color = 'red';
         inputNomeLogin.style.borderBottomColor = 'red';
         spanNome.style.color = 'red';

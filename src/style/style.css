@@ -200,6 +200,15 @@ body {
     margin-bottom: 20px;
 }
 
+.campo-obrigatorio-login-input{
+    position: fixed;
+    color: red;
+    font-size:9px;
+    text-align: center;
+    transform: translate(18%,-110px);
+    display: none;
+}
+
 .visualizarSenhaLogin{
     position: absolute;
     transform: translate(365px,85px);
@@ -208,10 +217,10 @@ body {
 }
 
 .spans {
-    position: relative;
+    position: fixed;
     float: right;
     color: rgba(0, 0, 255, 0.596);
-    transform: translate(-370px,82px);
+    transform: translate(35px,80px);
     cursor: pointer;
     color: rgba(255, 255, 255, 0.693);
 }
@@ -246,7 +255,7 @@ body {
     color: red;
     font-size: 9px;
     text-align: center;
-    transform: translate(16px, 122px);
+    transform: translate(0px, 122px);
     display: none;
 }
 
@@ -621,6 +630,16 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         transform: translate(-50%, -50%);
     }
 
+    .campo-obrigatorio-login-input {
+        font-size: 7px;
+        transform: translate(37%,-110px);
+    }
+
+    .campo-obrigatorio-login {
+        font-size: 9px;
+        transform: translate(20px, 122px);
+    }
+
     .input-login label {
         transform: translate(130px,70px);
         font-size: 11px;
@@ -634,7 +653,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     .spans {
         position: relative;
         top: -10px;
-        left: 90%;
     }
     
     .login-span-person {
