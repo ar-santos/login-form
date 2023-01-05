@@ -34,7 +34,6 @@ function acessarUsuario() {
         senha: '',
     }
     listaUsuarioCadastrado = JSON.parse(localStorage.getItem('listaUser'))
-    console.log(listaUsuarioCadastrado)
 
     listaUsuarioCadastrado.forEach((item) => {
         if(loginInputUser.value == item.userCad && loginInputSenha.value == item.senhaCad){
@@ -46,8 +45,6 @@ function acessarUsuario() {
             }
         }
     })
-
-    console.log(userValid)
 
     if(loginInputUser.value == userValid.user && loginInputSenha.value == userValid.senha){
 
