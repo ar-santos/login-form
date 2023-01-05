@@ -59,7 +59,6 @@ visualizarSenha.addEventListener('click', mostrarSenha, false)
 function cadastrarUser() {
     funcoesUsuarios.cadastrarUsuario()
     utils.validarCardCadastro()
-    // acessar.entrar()
 }
 
 btnCadastrarUser.addEventListener('click', cadastrarUser, false)
