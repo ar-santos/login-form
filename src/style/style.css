@@ -270,7 +270,7 @@ body {
 .login-h1-cadastrar{
     color: white;
     text-align: center;
-    transform: translate(20px,220px);
+    transform: translate(0px,220px);
     font-size: 20px;
     margin-bottom: 5px;
 }
@@ -663,6 +663,10 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 
     .login-span-lock{
         transform: translate(-340px,8px);
+    }
+
+    .login-h1-cadastrar{
+        transform: translate(22px,220px);
     }
 
     .input-pesquisarUser {

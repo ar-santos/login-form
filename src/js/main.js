@@ -64,6 +64,10 @@ function cadastrarUser() {
 
 btnCadastrarUser.addEventListener('click', cadastrarUser, false)
 
+inputNomeCad&&inputUsuarioCad&&inpuSenhaCad.addEventListener('keyup', (e)=> {
+    (e.key === 'Enter' ? cadastrarUser() : null)
+})
+
 function acessarUsuarioCadastrado() {
     utils.trocarCoresLogin()
     funcoesUsuarios.acessarUsuario()
@@ -73,8 +77,8 @@ function acessarUsuarioCadastrado() {
 
 btnEnterLogin.addEventListener('click', acessarUsuarioCadastrado, false)
 
-inputUserLogin.addEventListener('keyup', (e)=> {
-    (e.key === 'Enter' ? cardInform() : null)
+inputUserLogin&&inputSenhaLogin.addEventListener('keyup', (e)=> {
+    (e.key === 'Enter' ? acessarUsuarioCadastrado() : null)
 })
 
 function exibirPaginaCadastro() {
@@ -98,6 +102,10 @@ function exibirPesquisa() {
 }
 
 btnPesquisaUser.addEventListener('click', exibirPesquisa, false)
+
+inputPesquisarUser.addEventListener('keyup', (e)=> {
+    (e.key === 'Enter' ? exibirPesquisa() : null)
+})
 
 function closeCard() {
     utils.fecharCard()
