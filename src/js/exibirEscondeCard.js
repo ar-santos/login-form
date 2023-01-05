@@ -32,6 +32,7 @@ let btnCompany = document.getElementById('btn-company')
 function exibirCardCadastro() {
     if (cardCadastrar.style.display == 'none') {
         login.style.display = 'none';
+        campoObrigatorioLogin.style.display = 'none';
         cardCadastrar.style.display = 'block';
         userCadastrando.style.display = 'none';
         inputNameCadastro.style.borderBottomColor = 'white';
@@ -42,6 +43,7 @@ function exibirCardCadastro() {
         labelUserCadastro.style.color = 'white';
     } else { 
         login.style.display = 'none'  
+        campoObrigatorioLogin.style.display = 'none';
         cardCadastrar.style.display = 'block';
         userCadastrando.style.display = 'none';
         inputNameCadastro.style.borderBottomColor = 'white';
