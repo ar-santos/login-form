@@ -4,6 +4,7 @@ Este repositório foi criado para ser uma segunda versão melhorada do projeto-u
 do tipo cadastrar, logar e pesquisar. 
 
 ## Como funcionar?
+
     Clicando no link será exibido uma aba de login com os input de usuário e senha caso tenha uma conta
 você poderá prosseguir, caso contrário só clicar no botão de criar uma nova conta e colocar as informações necessárias de acordo com os input.
     Passando dessa fase de cadastrar e logar, irá aparecer uma aba de pesquisar um usuário na api, utilizando um 
