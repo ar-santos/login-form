@@ -11,4 +11,4 @@ do tipo cadastrar, logar e pesquisar.
     Passando dessa fase de cadastrar e logar, irá aparecer uma aba de pesquisar um usuário na api, utilizando um 
 número de 1 a 10 você poderá pesquisar um usuário desejado com isso será capaz de obter informações do tipo address,sobre e company, desse usuário.  
     
-Para visualizar o resultado seguir o link: <https://ar-santos.github.io/projeto-usuario2/>
+Para visualizar o resultado seguir o link: <https://ar-santos.github.io/login-form/>
