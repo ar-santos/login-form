@@ -1,4 +1,4 @@
-# projeto-usuario2
+# login
 
 Este repositório foi criado para ser uma segunda versão melhorada do projeto-usuario com mais funcionalidades
 do tipo cadastrar, logar e pesquisar. 
